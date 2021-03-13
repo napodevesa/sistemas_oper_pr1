@@ -51,8 +51,19 @@ main (int argc, char *argv[]) //argc=contains the inputs/num of arguments / argc
 
   //memoria dinámica
 fibo_table=malloc(sizeof(struct fibo_entry));
-
 //fibo_table= malloc(sizeof((char)));
+
+
+if (n>=2)
+
+{
+  for (i = 0; i <= n; ++i) 
+    {
+        fibo_table[i].lli = fibo_table[i].n - 2 + fibo_table[i].n - 1;
+      
+    }
+}
+
 
 
 /* Your code ends here */
