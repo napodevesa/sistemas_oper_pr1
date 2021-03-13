@@ -59,9 +59,12 @@ for (i=2;i<=LIMIT;i++)
 {
 n3= n1+n2;
 fibo_table[i].lli = n3;
-n1=n2;
-n2=n3;
 
+//fibo_table[i].str = n3 + '0';
+//sprintf(fibo_table->str, "%d", n3);
+
+n1=n2; 
+n2=n3;
 }
 
 /*
