@@ -25,6 +25,8 @@ free_memory(struct fibo_entry *table, int size)
 {
 /* Your code starts here */
     free(&table[size]);   
+    free(&table[size].lli);
+    free(&table[size].str);
 /* Your code ends here */
 }
 
@@ -53,8 +55,9 @@ main (int argc, char *argv[]) //argc=contains the inputs/num of arguments / argv
 
 fibo_table = malloc(sizeof(struct fibo_entry));
 
-fibo_table->lli = (unsigned long long)malloc(sizeof(unsigned long long));
-fibo_table->str = malloc(sizeof(char)*1024);
+fibo_table->lli = (unsigned long long)malloc(sizeof(unsigned long long)*log10(fibo_table->lli));
+
+fibo_table->str = (char*) malloc(sizeof(char)*1024);
  
 
 fibo_table[1].lli = 1;
@@ -71,29 +74,32 @@ for (i=0;i<=LIMIT;i++)
     
 for (i=2;i<=LIMIT;i++)
     {
+
     n3= n1+n2;
     fibo_table[i].lli = n3;
+    sprintf(fibo_table->str, "%d", n3 );
+
     n1=n2; 
     n2=n3;
 
+  
     }
     
-    //sprintf(fibo_table->str, "%d", n3);
-
 
 /*
+
 for (i=0;i<=3;i++)
     {
     n3= n1+n2;
-    fibo_table[i].str = (char)n3;
-    //sprintf(fibo_table->str, "%d", n3);
-   // puts(fibo_table->str);
+   
+    sprintf(fibo_table->str, "%d", n3);
+
     n1=n2; 
     n2=n3;
 
     }
-
 */
+
 
 /*
 fibo_table[0].lli = 1;
@@ -105,7 +111,7 @@ fibo_table[5].lli = 8;
 fibo_table[6].lli = 13;
 
 
-*/
+
 fibo_table[0].str = "0";
 fibo_table[1].str = "1";
 fibo_table[2].str = "1";
@@ -114,6 +120,7 @@ fibo_table[4].str = "3";
 fibo_table[5].str = "5";
 fibo_table[6].str = "8";
 fibo_table[7].str= "13";
+*/
 
 
 
