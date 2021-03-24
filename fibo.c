@@ -123,7 +123,7 @@ for (i=2;i<=n;i++)
 
 
 
-  //printf ("%d %llu %s\n", fibo_table[4].n, fibo_table[4].lli, fibo_table[4].str);
+  printf ("%d %llu %s\n", fibo_table[4].n, fibo_table[4].lli, fibo_table[4].str);
 
   return 0;
 }
