@@ -1,3 +1,9 @@
+//File: PR1_SO
+//Author: Napoleón Devesa Dalio
+//Date: 23-03-2021
+//Description: Práctica Sistemas Operativos UOC
+
+
 #include <stdlib.h> // gestión de memoria dinámica
 #include <errno.h> // macros que presentan un informe de error
 #include <stdio.h>
@@ -79,16 +85,12 @@ for (i=0; i<2;i++)
 
   }
 
-//fibo_table[0].str =  "0";
-//fibo_table[1].str =  "1";
-//fibo formula
 
 for (i=2;i<=n;i++)
 
     {
     
     int j;
-
   
     
     fibo_table[i].n =  i;
@@ -111,10 +113,7 @@ for (i=2;i<=n;i++)
     fibo_table[1].str = (char*) malloc (( j + 1) * sizeof(char));
     sprintf(fibo_table[1].str, "%d", 1);
 
-
     }
-
-
 
 
 /* Your code ends here */
@@ -127,7 +126,8 @@ for (i=2;i<=n;i++)
 
   free_memory(fibo_table, n);
 
-
+printf ("%d %llu %s\n", fibo_table[5].n, fibo_table[5].lli,
+              fibo_table[5].str);
 
   return 0;
 }
